@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Examen</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <div class="main-container">
+    <h1>Clientes</h1>
+    <div class="clients-container">
+      <div class="consumers">
+        <h1>Consumidores</h1>
+        <select name="consumers" id="consumers-select">
+          <option value="0">Selecciona un consumidor...</option>
+        </select>
+        <input type="text" name="to-search" id="to-search">
+        <button onclick="search()">Buscar</button>
+      </div>
+      <div class="advertisers">
+        <h1>Anunciantes</h1>
+        <select name="advertisers" id="advertisers-select">
+          <option value="0">Selecciona un anunciante...</option>
+        </select>
+      </div>
+    </div>
+    <div class="btns-container">
+      <button class="selected-btn" id="display-ads" onclick="displayRequired('display-ads')">Anuncios</button>
+      <button id="display-ads-by-advertiser" onclick="displayRequired('display-ads-by-advertiser')">Anuncios por empresa</button>
+      <button id="display-search" onclick="displayRequired('display-search')">Historial de búsqueda</button>
+    </div>
+    <div class="ads">
+      <div id="ads-container" class="ads-container">
+        <h1>Anuncios</h1>
+      </div>
+    </div>
+    <div id="ads-advicer" class="ads-advicer" hidden>
+      <h1 id="ads-advicer-header">Anuncios por empresa <span id="aah-name"></span></h1>
+      <div id="ads-advicer-container">
+        <p>Selecciona una empresa para ver sus anuncios</p>
+      </div>
+    </div>
+    <div id="search-history" class="search-history" hidden>
+      <h1 id="search-history-header">Historial de búsqueda</h1>
+      <div id="search-history-container"></div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
